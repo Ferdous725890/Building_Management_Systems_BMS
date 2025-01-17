@@ -7,7 +7,7 @@ const AdminRouter = ({children}) => {
     const {user, loading} = UseAuth()
    const [isAdmin, isAdminloading] = useAdmin()
    const location = useLocation();
-   console.log(location);
+  //  console.log(location);
    if (loading || isAdminloading) {
      return (
        <div className="flex justify-center items-center h-screen">

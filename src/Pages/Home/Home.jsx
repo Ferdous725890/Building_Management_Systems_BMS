@@ -5,13 +5,15 @@ import PopularSection from './PopularSection/PopularSection';
 import Feature from '../Feature/Feature';
 import Testimonials from './TESTIMONIALS/Testimonials';
 import Cover from '../../SheadComponent/Cover/Cover';
+import CarouselSlider from '../../Component/test';
 
 
 const Home = () => {
     return (
         <div>
        
-            <Banner></Banner>
+            {/* <Banner></Banner> */}
+            <CarouselSlider></CarouselSlider>
             <Category></Category>
             <PopularSection></PopularSection>
             <Feature></Feature>

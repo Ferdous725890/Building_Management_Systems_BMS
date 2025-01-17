@@ -10,17 +10,17 @@ const SocialLogin = () => {
     const {googleLogin} = useContext(AuthContext)
     const navigated = useNavigate()
     const handelLogin = () =>{
-        console.log('btn click');
+        // console.log('btn click');
         googleLogin()
         .then(result =>{
-            console.log(result.user);
+            // console.log(result.user);
             const userinfo = {
                 email: result.user.email,
                 name : result.user.displayName,
             }
             axiosPublic.post('/users', userinfo)
             .then(res =>{
-                console.log(res.data);
+                // console.log(res.data);
                 if(res.data.insertedId > 0){
                     alert("added")
                 }

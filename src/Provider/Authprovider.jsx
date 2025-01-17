@@ -45,18 +45,18 @@ const googleLogin = () =>{
   useEffect(()=>{
     const unsubCribe = onAuthStateChanged(auth, currentUser =>{
         setUser(currentUser)
-        console.log(currentUser, 'current user ');
+        // console.log(currentUser, 'current user ');
         if(currentUser){
           //get token sotore in client site
           const userinfo = {
             email: currentUser.email
           }
-          console.log(userinfo,'userinfo');
+          // console.log(userinfo,'userinfo');
           axiospublic.post('/jwt', userinfo )
           .then(res =>{
-            console.log(res.data);
+            // console.log(res.data);
             if(res.data.token){
-       console.log(res.data.token)
+      //  console.log(res.data.token)
               localStorage.setItem('access-token', res.data.token);
             }
           })

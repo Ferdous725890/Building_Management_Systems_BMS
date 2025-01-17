@@ -5,14 +5,15 @@ import Navbar from "../SheadComponent/Navbar/Navbar";
 
 const Main = () => {
   const location = useLocation();
-  console.log(location);
-  const noHeaderFooter = location.pathname.includes("login") || location.pathname.includes("signup");
+  // console.log(location);
+  const noHeaderFooter =
+    location.pathname.includes("login") || location.pathname.includes("signup");
   return (
     <div>
       {noHeaderFooter || <Navbar></Navbar>}
-  <main className="min-h-[calc(100vh-10rem)]">
-  <Outlet></Outlet>
-  </main>
+      <main className="min-h-[calc(100vh-10rem)]">
+        <Outlet></Outlet>
+      </main>
       {noHeaderFooter || <Footer></Footer>}
     </div>
   );

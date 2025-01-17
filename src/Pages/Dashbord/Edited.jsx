@@ -18,14 +18,14 @@ const Edited = () => {
     const onSubmit = async (data) => {
         const formData = new FormData();
         formData.append("image", data.image[0]);
-        console.log(data);
+        // console.log(data);
         try {
           const res = await axiosPulic.post(iamge_hosting_api, formData, {
             headers: {
               "Content-Type": "multipart/form-data",
             },
           });
-          console.log(res.data);
+          // console.log(res.data);
           if (res.data.success) {
             const menuItems = {
               name: data.name,
@@ -34,9 +34,9 @@ const Edited = () => {
               description: data.description,
               image: res.data.data.display_url,
             };
-            console.log(menuItems);
+            // console.log(menuItems);
             const menures = await axiosSecure.patch(`/menu/${_id}`, menuItems);
-            console.log(menures.data);
+            // console.log(menures.data);
             if (menures.data.modifiedCount >0) {
               // show success popap
             //   reset()

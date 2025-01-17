@@ -14,7 +14,7 @@ const Alluser = () => {
     const axiosSecure = useAxiosSecure()
     const { refetch, data: users = []} = useQuery({
         queryKey: ['users'],
-        queryFn: async()=>{
+        queryFn: async()=>{   
 
             const res = await axiosSecure.get(`/alluserdata`)
             return res.data
@@ -22,10 +22,10 @@ const Alluser = () => {
         }
     })
     const handelmakeAdmin = (user) =>{
-        console.log(user._id);
+        // console.log(user._id);
         axiosSecure.patch(`/user/admin/${user._id}`)
         .then(res=>{
-            console.log(res.data);
+            // console.log(res.data);
             if(res.data.modifiedCount>0){
                 Swal.fire({
                     position: "top-end",
@@ -39,7 +39,7 @@ const Alluser = () => {
         })
     }
     const handelUsrDeleted = (id) =>{
-        console.log(id);
+        // console.log(id);
        
 
         Swal.fire({
@@ -55,7 +55,7 @@ const Alluser = () => {
            
               axiosSecure.delete(`/userdeleted/${id}`)
               .then(res=>{
-                  console.log(res.data);
+                  // console.log(res.data);
                   Swal.fire({
                     title: "Deleted!",
                     text: "Your file has been deleted.",

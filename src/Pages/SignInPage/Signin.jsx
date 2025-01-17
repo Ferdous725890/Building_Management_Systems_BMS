@@ -23,10 +23,10 @@ const Signin = () => {
 
 
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     creteduser(data.email, data.password).then((result) => {
       const logetedUser = result.user;
-      console.log(logetedUser);
+      // console.log(logetedUser);
       updatedUserProfile(data.name, data.photoURL);
       const userinfo = {
         name: data.name,
@@ -35,7 +35,7 @@ const Signin = () => {
       axiosPublic.post("/users", userinfo)
       .then((res) => {
         
-        console.log(res.data, 'user data added')
+        // console.log(res.data, 'user data added')
         if(res.data.insertedId){
           reset();
           Swal.fire({

@@ -21,6 +21,7 @@ import AdminRouter from "./PrivatedRoutes/AdminRouter";
 import ManageItems from "../Pages/Home/TESTIMONIALS/Layout/ManageItems";
 import Edited from "../Pages/Dashbord/Edited";
 import Payment from "../Pages/Dashbord/Payment/Payment";
+import Apartment from "../Pages/Apartment/Apartment";
 
 
   const router = createBrowserRouter([
@@ -31,6 +32,10 @@ import Payment from "../Pages/Dashbord/Payment/Payment";
         {
           path: '/',
           element: <Home></Home>
+        },
+        {
+          path: '/apartment',
+          element:<Apartment></Apartment>
         },
         {
           path: '/menu',
@@ -111,3 +116,7 @@ import Payment from "../Pages/Dashbord/Payment/Payment";
 // login page
 // const location = useLocation()
 // const from = location.state.from.pathname
+// ...................................................................................
+// some site links
+// https://edisonrealestatebd.com/
+//https://edisonrealestatebd.com/projects/edison-desdemona

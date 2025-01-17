@@ -15,7 +15,7 @@ const Login = () => {
   const [disabled, setDisabled] = useState(true); // Disable submit button initially
   const location = useLocation()
   const from = location?.state?.pathname || "/";
-  console.log("stated in the location login page" , location?.state);
+  // console.log("stated in the location login page" , location?.state);
   // Load the captcha engine on component mount
   useEffect(() => {
     loadCaptchaEnginge(6); // Generate a 6-character captcha
@@ -28,12 +28,12 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    console.log("Login details:", { email, password });
+    // console.log("Login details:", { email, password });
 
     signin(email, password)
       .then((result) => {
         const user = result.user;
-        console.log("Login successful:", user);
+        // console.log("Login successful:", user);
         
       })
       .catch((error) => {
@@ -46,10 +46,10 @@ const Login = () => {
     const userCaptchaValue = captchRef.current.value; // Get value from input field
     if (validateCaptcha(userCaptchaValue)) {
       setDisabled(false); // Enable the button if captcha is valid
-      console.log("Captcha validated successfully");
+      // console.log("Captcha validated successfully");
     } else {
       setDisabled(true); // Disable the button if captcha is invalid
-      console.log("Captcha validation failed");
+      // console.log("Captcha validation failed");
     }
   };
 
