@@ -6,6 +6,9 @@ import Feature from '../Feature/Feature';
 import Testimonials from './TESTIMONIALS/Testimonials';
 import Cover from '../../SheadComponent/Cover/Cover';
 import CarouselSlider from '../../Component/test';
+import AboutBuilding from '../../Component/AllUsers/AboutSection';
+import LocationSection from '../../Component/AllUsers/GoogleMap';
+import CouponsSection from '../../Component/AllUsers/Cupon';
 
 
 const Home = () => {
@@ -15,9 +18,12 @@ const Home = () => {
             {/* <Banner></Banner> */}
             <CarouselSlider></CarouselSlider>
             <Category></Category>
-            <PopularSection></PopularSection>
+            {/* <PopularSection></PopularSection> */}
             <Feature></Feature>
+            <AboutBuilding></AboutBuilding>
             <Testimonials></Testimonials>
+            <LocationSection></LocationSection>
+            {/* <CouponsSection></CouponsSection> */}
            
         </div>
     );

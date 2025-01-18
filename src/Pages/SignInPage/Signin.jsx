@@ -19,9 +19,6 @@ const Signin = () => {
   const { creteduser, updatedUserProfile } = useContext(AuthContext);
   const axiosPublic = useAxiosPublic();
 
-
-
-
   const onSubmit = (data) => {
     // console.log(data);
     creteduser(data.email, data.password).then((result) => {
@@ -32,24 +29,18 @@ const Signin = () => {
         name: data.name,
         email: data.email,
       };
-      axiosPublic.post("/users", userinfo)
-      .then((res) => {
-        
+      axiosPublic.post("/users", userinfo).then((res) => {
         // console.log(res.data, 'user data added')
-        if(res.data.insertedId){
+        if (res.data.insertedId) {
           reset();
           Swal.fire({
             title: "Drag me!",
             icon: "success",
             draggable: true,
           });
-          // navigated("/");
+          navigated("/");
         }
-       
-      
       });
-
-     
     });
   };
 
@@ -65,36 +56,36 @@ const Signin = () => {
           </div>
           <div className="card bg-base-100  border  w-[900px]  shadow-2xl pb-10">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-             <div className=" grid gap-5 grid-cols-2">
-             <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Name</span>
-                </label>
-                <input
-                  {...register("name", { required: true })}
-                  type="name"
-                  placeholder="Name"
-                  className="input input-bordered"
-                />
-                {errors.name && (
-                  <span className="text-red-500">This field is required</span>
-                )}
+              <div className=" grid gap-5 grid-cols-2">
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Name</span>
+                  </label>
+                  <input
+                    {...register("name", { required: true })}
+                    type="name"
+                    placeholder="Name"
+                    className="input input-bordered"
+                  />
+                  {errors.name && (
+                    <span className="text-red-500">This field is required</span>
+                  )}
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Photo Url</span>
+                  </label>
+                  <input
+                    {...register("photoURL", { required: true })}
+                    type="naphotoURLme"
+                    placeholder="photoURL"
+                    className="input input-bordered"
+                  />
+                  {errors.photoURL && (
+                    <span className="text-red-500">This field is required</span>
+                  )}
+                </div>
               </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Photo Url</span>
-                </label>
-                <input
-                  {...register("photoURL", { required: true })}
-                  type="naphotoURLme"
-                  placeholder="photoURL"
-                  className="input input-bordered"
-                />
-                {errors.photoURL && (
-                  <span className="text-red-500">This field is required</span>
-                )}
-              </div>
-             </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -162,14 +153,17 @@ const Signin = () => {
                 <button className="btn btn-primary">signup</button>
               </div>
             </form>
-         <div className="px-5 ">
-         <Link className=" bg-orange-100 text-center w-full text-sm"  to="/login">Alredy have a Account <span className="text-blue-500">
-          Login
-            </span></Link>
+            <div className="px-5 ">
+              <Link
+                className=" bg-orange-100 text-center w-full text-sm"
+                to="/login"
+              >
+                Alredy have a Account{" "}
+                <span className="text-blue-500">Login</span>
+              </Link>
+            </div>
 
-         </div>
-      
-<SocialLogin></SocialLogin>
+            <SocialLogin></SocialLogin>
           </div>
         </div>
       </div>

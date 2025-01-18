@@ -22,6 +22,13 @@ import ManageItems from "../Pages/Home/TESTIMONIALS/Layout/ManageItems";
 import Edited from "../Pages/Dashbord/Edited";
 import Payment from "../Pages/Dashbord/Payment/Payment";
 import Apartment from "../Pages/Apartment/Apartment";
+import MyProfile from "../Pages/Home/TESTIMONIALS/Layout/MyProfile";
+import AdminProfile from "../Component/AllUsers/AdminProfile";
+import AgrementRequest from "../Component/AgrementRequest";
+import MemberProfile from "../Component/MemberProfile";
+import Announcements from "../Component/Announcements";
+import ManageMembers from "../Component/ManageMembers";
+import MakeAnnouncement from "../Component/MakeAnnouncement";
 
 
   const router = createBrowserRouter([
@@ -82,6 +89,10 @@ import Apartment from "../Pages/Apartment/Apartment";
 
         //admin user onley
         {
+          path:'adminprofile',
+          element:<AdminProfile></AdminProfile>
+        },
+        {
           path:'allusers',
           element:<Alluser></Alluser>
         },
@@ -94,9 +105,34 @@ import Apartment from "../Pages/Apartment/Apartment";
           element:<AdminRouter><ManageItems></ManageItems></AdminRouter>
         },
         {
+          path:'agrementRequest',
+          element:<AgrementRequest></AgrementRequest>
+        },
+        {
           path:`/dashbord/updated/:id`,
           element:<AdminRouter> <Edited></Edited> </AdminRouter>,
          loader: ({params}) => fetch(`http://localhost:5000/menu/${params.id}`)
+        },
+        {
+          path:'myprofile',
+          element:<MyProfile></MyProfile>
+        },
+        
+        {
+        path:'member',
+        element:<MemberProfile></MemberProfile>
+        },
+        {
+        path:'announcement',
+        element:<Announcements></Announcements>
+        },
+        {
+        path:'managemenber',
+        element:<ManageMembers></ManageMembers>
+        },
+        {
+        path:'Announcement/admin',
+        element:<MakeAnnouncement></MakeAnnouncement>
         },
         
     ]

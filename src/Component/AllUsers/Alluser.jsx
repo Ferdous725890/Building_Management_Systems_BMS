@@ -18,7 +18,6 @@ const Alluser = () => {
 
             const res = await axiosSecure.get(`/alluserdata`)
             return res.data
-
         }
     })
     const handelmakeAdmin = (user) =>{
