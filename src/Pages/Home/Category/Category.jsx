@@ -2,14 +2,13 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules"; // Autoplay মডিউল ইমপোর্ট করুন
 import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 
 const Category = () => {
   const axiosPublic = useAxiosPublic();
-
 
   const {
     data: userdata = [],
@@ -26,13 +25,9 @@ const Category = () => {
   return (
     <div>
       <section>
-      <div className="mt-10 mb-10">
-      <SectionTitle
-          
-          heading={"ORDER ONLINE"}
-        ></SectionTitle>
-      </div>
-
+        <div className="mt-10 mb-10">
+          <SectionTitle heading={"Our apartment"}></SectionTitle>
+        </div>
 
         {isLoading && <p>Loading apartments...</p>}
         {isError && <p>Failed to load apartments. Please try again later.</p>}
@@ -42,12 +37,15 @@ const Category = () => {
           <Swiper
             slidesPerView={4}
             spaceBetween={30}
-            autoplay={true}
+            autoplay={{
+              delay: 1000, 
+              disableOnInteraction: false,
+            }}
             centeredSlides={true}
             pagination={{
               clickable: true,
             }}
-            modules={[Pagination]}
+            modules={[Pagination, Autoplay]} 
             className="mySwiper"
           >
             {userdata.map((item) => (
@@ -56,12 +54,12 @@ const Category = () => {
                   <img
                     src={item.apartment_image}
                     alt={`Apartment ${item.apartment_no}`}
-                    className=" w-full h-full min-h-[250px] object-cover rounded-lg"
+                    className=" w-full h-full min-h-[400px] object-cover rounded-lg"
                   />
                   <h2 className="text-4xl uppercase text-white absolute bottom-4 left-4 bg-black bg-opacity-50 p-2 rounded">
                     {item.apartment_no}
                   </h2>
-                  <h2 className="text-4xl uppercase text-white absolute bottom-4 left-4 bg-black bg-opacity-50 p-2 rounded">
+                  <h2 className="text-4xl uppercase text-white absolute bottom-4 left-32 bg-black bg-opacity-50 p-2 rounded">
                    
                   </h2>
                 </div>

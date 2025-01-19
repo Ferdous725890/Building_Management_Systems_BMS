@@ -20,6 +20,9 @@ const MemberProfile = () => {
       return res.data;
     },
   });
+  if(isLoading){
+    <h2>loding...............</h2>
+  }
   return (
     <div>
       <div>

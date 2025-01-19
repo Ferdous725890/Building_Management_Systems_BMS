@@ -24,10 +24,7 @@ const Testimonials = () => {
   }, []);
   return (
     <section className="mt-12">
-      <SectionTitle
-        subheading={"---What Our Clients Say---"}
-        heading={"TESTIMONIALS"}
-      ></SectionTitle>
+      <SectionTitle subheading={""} heading={"TESTIMONIALS"}></SectionTitle>
 
       <Swiper
         pagination={{
@@ -38,11 +35,27 @@ const Testimonials = () => {
       >
         {review.map((revie) => (
           <SwiperSlide className="" key={revie._id}>
-            <div className="flex flex-col justify-center items-center px-10 py-10">
-              <Rating style={{ maxWidth: 180 }} value={revie.rating} readOnly />
+            <div className="flex border  flex-col justify-center items-center px-10 py-10 text-white bg-white/10">
+           <div className="">
+              <div className="flex ">
+                <div>
+                  <img
+                    className="w-40 rounded-md h-40 object-cover"
+                    src={revie.image}
+                    alt=""
+                  />
+                </div>
 
-              {revie.details}
-              <p> {revie.name} </p>
+                <div className="ml-10">
+
+                <p className="text-2xl"> {revie.name} </p>
+                <p className="mt-2 w-[500px]">{revie.details}</p>
+                <Rating className=" px-1 py-1" style={{ maxWidth: 150, color:"yellow"  }} value={revie.rating} readOnly />
+
+                </div>
+          
+              </div>
+           </div>
             </div>
           </SwiperSlide>
         ))}

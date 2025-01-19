@@ -49,13 +49,16 @@ const Signin = () => {
       <Helmet>
         <title>Signup</title>
       </Helmet>
-      <div className="hero bg-base-200 min-h-screen">
+      <div className="hero  min-h-screen">
         <div className="hero-content flex-col ">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Signup!</h1>
+            
           </div>
-          <div className="card bg-base-100  border  w-[900px]  shadow-2xl pb-10">
+          <div className="card bg-white/10 border  w-[900px]  shadow-2xl pb-10">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+           <div className="flex justify-center items-center">
+           <h1 className="text-3xl  text-white font-bold border-b-4 px-5 pb-2 rounded-lg">Signup!</h1>
+           </div>
               <div className=" grid gap-5 grid-cols-2">
                 <div className="form-control">
                   <label className="label">

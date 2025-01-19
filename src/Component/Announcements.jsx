@@ -18,19 +18,21 @@ const Announcements = () => {
       return res.data;
     },
   });
-  return <div className="p-10">
- <h2 className="text-2xl mb-5">Announcements  ({announcementdata.length})</h2>
-  {
-    announcementdata.map(data => <>
-    <div className="border mb-10 p-5 rounded-lg">
-        <h1 className="text-xl">{data.title}</h1>
-        <p>
-            {data.description}
-        </p>
+  return (
+    <div className="p-10">
+      <h2 className="text-2xl mb-5">
+        Announcements ({announcementdata.length})
+      </h2>
+      {announcementdata.map((data) => (
+        <>
+          <div className="border mb-10 p-5 rounded-lg">
+            <h1 className="text-xl">{data.title}</h1>
+            <p>{data.description}</p>
+          </div>
+        </>
+      ))}
     </div>
-    </>)
-  }
-  </div>;
+  );
 };
 
 export default Announcements;

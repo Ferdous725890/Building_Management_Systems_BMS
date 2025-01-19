@@ -82,8 +82,8 @@ const Apartment = () => {
   const totalPages = Math.ceil(filteredApartments.length / itemsPerPage);
 
   return (
-    <div className="bg-gray-100 min-h-screen mt-20 p-4">
-      <h2 className="text-3xl font-bold text-gray-800 mb-6">Apartment List</h2>
+    <div className="min-h-screen p-4 pt-20">
+      <h2 className="text-3xl font-bold text-gray-800 mb-6">Apartment</h2>
 
       {/* Search functionality */}
       <div className="mb-6 flex gap-4">
@@ -109,9 +109,9 @@ const Apartment = () => {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {paginatedApartments.map((apartment) => (
-          <div key={apartment._id} className="bg-white p-4 rounded shadow">
+          <div key={apartment._id} className="border  rounded shadow">
             <img
               src={apartment.apartment_image}
               alt={`Apartment ${apartment.apartment_no}`}

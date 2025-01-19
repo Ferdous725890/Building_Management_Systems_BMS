@@ -15,7 +15,7 @@ const CarouselSlider = () => {
   ];
 
   return (
-    <div className="mt-20">
+    <div className="">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={30}
@@ -23,7 +23,7 @@ const CarouselSlider = () => {
         navigation
         pagination={{ clickable: true }}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
-        className="w-full h-[calc(100vh-5rem)]"
+        className="w-full h-[calc(100vh-0rem)]"
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import useAxiosPublic from "../Hooks/useAxiosPublic";
+import { FaRegStar } from "react-icons/fa";
 
 const MakeAnnouncement = () => {
   const axiosPublic = useAxiosPublic();
@@ -19,24 +20,29 @@ const MakeAnnouncement = () => {
   };
 
   return (
-    <div className="p-6 ">
-      <h2 className="text-2xl font-bold mb-4">Make Announcement Fresous</h2>
+    <div className="p-10">
+      <div className="flex justify-center items-center ">
+        <p className="text-xl border-b-4 pb-2 px-4 rounded-lg mb-5 text-white">
+          {" "}
+          Announcement
+        </p>
+      </div>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-sm font-medium">Title</label>
+          <label className="block text-sm font-medium text-white mb-[4px] ">Title <span className="text-red-500">*</span></label>
           <input
             type="text"
             name="title"
-            className="w-full border px-3 py-2"
+            className="w-full border px-3 py-2 rounded-md"
             placeholder="Enter announcement title"
             required
           />
         </div>
         <div>
-          <label className="block text-sm font-medium">Description</label>
+          <label className="block text-sm font-medium text-white mb-1">Description <span className="text-red-500">*</span></label>
           <textarea
             name="description"
-            className="w-full border px-3 py-2"
+            className="w-full min-h-[200px] border px-3 py-2 rounded-md"
             placeholder="Enter announcement description"
             rows="4"
             required
@@ -44,7 +50,7 @@ const MakeAnnouncement = () => {
         </div>
         <button
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded"
+          className="bg-blue-500 w-full text-white px-4 py-2 rounded"
         >
           Submit
         </button>

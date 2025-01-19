@@ -2,7 +2,8 @@ import React from "react";
 import UseAuth from "../Hooks/UseManu/UseAuth";
 import useAxiosPublic from "../Hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
-import { MdDeleteForever } from "react-icons/md";
+import { MdDeleteForever, MdOutlinePersonRemoveAlt1 } from "react-icons/md";
+import { CiCircleRemove } from "react-icons/ci";
 
 const ManageMembers = () => {
   const { user } = UseAuth();
@@ -20,23 +21,26 @@ const ManageMembers = () => {
       return res.data;
     },
   });
-  const handelmemberdeleted = (id) =>{
+  const handelmemberdeleted = (id) => {
     console.log(id);
-    const res = axiosPublic.delete(`/apartment/bookings/${id}`)
+    const res = axiosPublic.delete(`/apartment/bookings/${id}`);
     console.log(res.data);
-    refetch()
-
-  }
+    refetch();
+  };
   return (
-    <div className="p-10">
-      {membersdata.length}
-      <div className="overflow-x-auto">
+    <div className="p-5 text-white">
+      <div className="flex justify-center items-center ">
+        <p className="text-xl border-b-4 pb-2 px-4 rounded-lg mb-5">
+          {" "}
+          All Members {membersdata.length}
+        </p>
+      </div>
+      <div className="overflow-x-auto ">
         <table className="table">
           {/* head */}
-          <thead>
-            <tr>
-              <th>Numbers</th>
-
+          <thead className="bg-gray-500">
+            <tr className="text-white">
+              <th className="">Numbers</th>
               <th>User Name</th>
               <th>User Email</th>
               <th>Status</th>
@@ -51,9 +55,18 @@ const ManageMembers = () => {
                 <td>{member.useremail}</td>
                 <td>{member.status}</td>
                 <th>
-                  <button onClick={()=> handelmemberdeleted (member._id)} className="btn btn-ghost btn-xs">
+                  <button
+                    onClick={() => handelmemberdeleted(member._id)}
+                    className="btn btn-ghost btn-xs"
+                  >
                     {" "}
-                    <MdDeleteForever className="text-xl text-red-500" />{" "}
+                    <div class="relative group inline-block">
+                      <MdOutlinePersonRemoveAlt1 className="text-2xl text-red-500 " />
+
+                      <span class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black text-white text-sm rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                        Remove
+                      </span>
+                    </div>
                   </button>
                 </th>
               </tr>

@@ -10,46 +10,37 @@ import { Helmet } from "react-helmet";
 import SocialLogin from "../../SocialLogin/SocialLogin";
 
 const Login = () => {
-  const captchRef = useRef(); // Ref for the captcha input field
+  const captchRef = useRef();
   const { signin } = useContext(AuthContext);
-  const [disabled, setDisabled] = useState(true); // Disable submit button initially
-  const location = useLocation()
+  const [disabled, setDisabled] = useState(true);
+  const location = useLocation();
   const from = location?.state?.pathname || "/";
-  // console.log("stated in the location login page" , location?.state);
-  // Load the captcha engine on component mount
+
   useEffect(() => {
-    loadCaptchaEnginge(6); // Generate a 6-character captcha
+    loadCaptchaEnginge(6);
   }, []);
 
-  // Handle form submission
   const handelLogin = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
 
-    // console.log("Login details:", { email, password });
-
     signin(email, password)
       .then((result) => {
         const user = result.user;
-        // console.log("Login successful:", user);
-        
       })
       .catch((error) => {
         console.error("Login error:", error);
       });
   };
 
-  // Validate captcha input
   const handleValidateCaptcha = () => {
-    const userCaptchaValue = captchRef.current.value; // Get value from input field
+    const userCaptchaValue = captchRef.current.value;
     if (validateCaptcha(userCaptchaValue)) {
-      setDisabled(false); // Enable the button if captcha is valid
-      // console.log("Captcha validated successfully");
+      setDisabled(false);
     } else {
-      setDisabled(true); // Disable the button if captcha is invalid
-      // console.log("Captcha validation failed");
+      setDisabled(true);
     }
   };
 
@@ -58,15 +49,14 @@ const Login = () => {
       <Helmet>
         <title>Login</title>
       </Helmet>
-      <div className="hero bg-base-200 min-h-screen">
+      <div className="hero  min-h-screen ">
         <div className="hero-content flex-col">
-          <div className="text-center lg:text-left">
-            <h1 className="text-3xl font-bold">Login now!</h1>
-           
-          </div>
-          <div className="card bg-base-100 w-full w-[900px] shadow-2xl">
-            <form onSubmit={handelLogin} className="card-body">
-              {/* Email Input */}
+          <div className="text-center lg:text-left"></div>
+          <div className="card bg-white/10 backdrop-blur-3xl  w-[800px] border">
+            <form onSubmit={handelLogin} className="card-body px-20">
+            <div className="flex justify-center items-center">
+           <h1 className="text-3xl  text-white font-bold border-b-4 px-5 pb-2 rounded-lg">Signup!</h1>
+           </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -80,7 +70,6 @@ const Login = () => {
                 />
               </div>
 
-              {/* Password Input */}
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Password</span>
@@ -99,13 +88,12 @@ const Login = () => {
                 </label>
               </div>
 
-              {/* Captcha Section */}
               <div className="form-control">
                 <label className="label">
-                  <LoadCanvasTemplate /> {/* Renders the captcha canvas */}
+                  <LoadCanvasTemplate />
                 </label>
                 <input
-                  ref={captchRef} // Connect the ref to this input
+                  ref={captchRef}
                   type="text"
                   name="captcha"
                   placeholder="Type the captcha above"
@@ -114,34 +102,40 @@ const Login = () => {
                 />
                 <button
                   type="button"
-                  onClick={handleValidateCaptcha} // Validate the captcha on button click
-                  className="btn btn-outline btn-xs mt-2"
+                  onClick={handleValidateCaptcha}
+                  className="border rounded-md hover:bg-white/20 btn-xs mt-2 mt-2"
                 >
                   Validate
                 </button>
               </div>
 
-              {/* Submit Button */}
               <div className="form-control mt-6">
                 <button
                   className="btn btn-primary"
                   type="submit"
-                  disabled={false} // Disable the button based on captcha validation
+                  disabled={false}
                 >
                   Login
                 </button>
               </div>
             </form>
 
-            {/* Link to Signup Page */}
-            <p className="px-5">
+           <div className="px-16">
+           <p className="ml-8">
               <small>
-                New here? <Link to={"/signup"}> <span className="text-blue-500">Create another Account</span> </Link>
+                New here?{" "}
+                <Link to={"/signup"}>
+                  {" "}
+                  <span className="text-blue-500 ">
+                    Create another Account
+                  </span>{" "}
+                </Link>
               </small>
             </p>
-          <div className="pb-5">
-          <SocialLogin></SocialLogin>
-          </div>
+            <div className="pb-5">
+              <SocialLogin></SocialLogin>
+            </div>
+           </div>
           </div>
         </div>
       </div>

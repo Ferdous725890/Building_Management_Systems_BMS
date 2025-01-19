@@ -18,36 +18,48 @@ const Dashbord = () => {
   const [isAdmin] = useAdmin();
   // const isAdmin = true
   return (
-    <div className="flex">
-      <div className="w-64 h-screen bg-orange-300">
+    <div className="flex bg-black">
+
+
+      <div className="w-64 h-screen text-white bg-orange-500">
         <ul className="menu">
           {isAdmin ? (
             <>
-             <li>
-                <NavLink to={"/dashbord/Announcement/admin"}>
-                  <FaAddressBook></FaAddressBook>
-                 Announcement
-                </NavLink>
-              </li>
               <li>
                 <NavLink to={"/dashbord/adminprofile"}>
                   <FaHome></FaHome>
                   Admin Profile
                 </NavLink>
               </li>
+
+               
               <li>
                 <NavLink to={"/dashbord/managemenber"}>
                   <FaCalendarDay></FaCalendarDay>
                   Manage Manbers
                 </NavLink>
               </li>
+
+             <li>
+                <NavLink to={"/dashbord/Announcement/admin"}>
+                  <FaAddressBook></FaAddressBook>
+                 Announcement
+                </NavLink>
+              </li>
+           
               <li>
                 <NavLink to={"/dashbord/agrementRequest"}>
                   <FaCalendarDay></FaCalendarDay>
                   Agrement Request
                 </NavLink>
               </li>
-
+              <li>
+                <NavLink to={"/dashbord/coupons"}>
+                  <FaCalendarDay></FaCalendarDay>
+                  Manage Coupons
+                </NavLink>
+              </li>
+{/* --------------------------------------------------------------------------------- */}
               <li>
                 <NavLink to={"/dashbord/manageitems"}>
                   <FaShoppingCart></FaShoppingCart>
@@ -60,6 +72,7 @@ const Dashbord = () => {
                   All User
                 </NavLink>
               </li>
+{/* --------------------------------------------------------------------------------- */}
              
             </>
           ) : (
@@ -99,19 +112,14 @@ const Dashbord = () => {
             </>
           )}
           {/* //---------------------- */}
-          <div className="divider"></div>
+          <div className="divider "></div>
           <li>
             <NavLink to={"/"}>
               <FaHome></FaHome>
               User Home
             </NavLink>
           </li>
-          <li>
-            <NavLink to={"/order/salad"}>
-              <FaSearch></FaSearch>
-              Menu
-            </NavLink>
-          </li>
+        
           <li>
             <NavLink to={"/order/salad"}>
               <FaVoicemail></FaVoicemail>
@@ -149,6 +157,16 @@ const Dashbord = () => {
       <div className="flex-1">
         <Outlet></Outlet>
       </div>
+
+
+
+
+
+
+
+
+
+      
     </div>
   );
 };
