@@ -29,6 +29,8 @@ import MemberProfile from "../Component/MemberProfile";
 import Announcements from "../Component/Announcements";
 import ManageMembers from "../Component/ManageMembers";
 import MakeAnnouncement from "../Component/MakeAnnouncement";
+import Cupons from "../Component/Cupons";
+import AllCupons from "../Component/AllCupons";
 
 
   const router = createBrowserRouter([
@@ -129,6 +131,10 @@ import MakeAnnouncement from "../Component/MakeAnnouncement";
         {
         path:'managemenber',
         element:<ManageMembers></ManageMembers>
+        },
+        {
+        path:'coupons',
+        element:<AllCupons></AllCupons>
         },
         {
         path:'Announcement/admin',

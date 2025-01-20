@@ -22,10 +22,10 @@ const MyProfile = () => {
   });
   return (
     <div>
-      <div className="overflow-x-auto p-10">
+      <div className="overflow-x-auto p-10 text-white">
         <table className="table">
           {/* head */}
-          <thead>
+          <thead className="text-white bg-gray-500">
             <tr>
               <th>
               Number
@@ -42,7 +42,7 @@ const MyProfile = () => {
 
           <tbody>
             {userdata.map((items, index) => (
-              <tr key={items._id}>
+              <tr className="hover:bg-white/10" key={items._id}>
                 {/* <th>{items.photoURL}</th> */}
                 <th>{index + 1}</th>
                 <td>

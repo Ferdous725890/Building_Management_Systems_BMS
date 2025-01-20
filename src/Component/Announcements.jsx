@@ -19,7 +19,7 @@ const Announcements = () => {
     },
   });
   return (
-    <div className="p-10">
+    <div className="p-10 text-white">
       <h2 className="text-2xl mb-5">
         Announcements ({announcementdata.length})
       </h2>

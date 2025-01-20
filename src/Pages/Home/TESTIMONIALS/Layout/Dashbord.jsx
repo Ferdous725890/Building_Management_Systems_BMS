@@ -83,6 +83,21 @@ const Dashbord = () => {
                   My Profile
                 </NavLink>
               </li>
+
+
+              <li>
+            <NavLink className={""} to={"/dashbord/announcement"}>
+            Announcements
+            </NavLink>
+          </li> 
+
+
+
+
+
+
+<p>-----------------------</p>
+              
               <li>
                 <NavLink to={"/dashbord/reservation"}>
                   <FaCalendarDay></FaCalendarDay>
@@ -145,11 +160,11 @@ const Dashbord = () => {
             </NavLink>
           </li>
           */}
-          <li>
+          {/* <li>
             <NavLink className={"text-red-500 "} to={"/dashbord/announcement"}>
             Announcements
             </NavLink>
-          </li> 
+          </li>  */}
         </ul>
       </div>
 

@@ -5,7 +5,7 @@ import {
 } from "react-simple-captcha";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../../Provider/Authprovider";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import SocialLogin from "../../SocialLogin/SocialLogin";
 
@@ -15,6 +15,7 @@ const Login = () => {
   const [disabled, setDisabled] = useState(true);
   const location = useLocation();
   const from = location?.state?.pathname || "/";
+  const navigate =  useNavigate()
 
   useEffect(() => {
     loadCaptchaEnginge(6);
@@ -29,20 +30,21 @@ const Login = () => {
     signin(email, password)
       .then((result) => {
         const user = result.user;
+navigate('/')
       })
       .catch((error) => {
         console.error("Login error:", error);
       });
   };
 
-  const handleValidateCaptcha = () => {
-    const userCaptchaValue = captchRef.current.value;
-    if (validateCaptcha(userCaptchaValue)) {
-      setDisabled(false);
-    } else {
-      setDisabled(true);
-    }
-  };
+  // const handleValidateCaptcha = () => {
+  //   const userCaptchaValue = captchRef.current.value;
+  //   if (validateCaptcha(userCaptchaValue)) {
+  //     setDisabled(false);
+  //   } else {
+  //     setDisabled(true);
+  //   }
+  // };
 
   return (
     <>
@@ -98,15 +100,15 @@ const Login = () => {
                   name="captcha"
                   placeholder="Type the captcha above"
                   className="input input-bordered"
-                  required
+                
                 />
-                <button
+                {/* <button
                   type="button"
                   onClick={handleValidateCaptcha}
                   className="border rounded-md hover:bg-white/20 btn-xs mt-2 mt-2"
                 >
                   Validate
-                </button>
+                </button> */}
               </div>
 
               <div className="form-control mt-6">
