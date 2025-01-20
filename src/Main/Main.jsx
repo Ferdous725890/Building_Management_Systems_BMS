@@ -11,15 +11,13 @@ const Main = () => {
   return (
     //bg-[#ff9138c7]
     <div className="border-red-500 bg-[#ff9138c7]">
-     <div>
-   
+      <div>
         {noHeaderFooter || <Navbar></Navbar>}
         <main className="min-h-[calc(100vh-10rem)]">
           <Outlet></Outlet>
         </main>
         {noHeaderFooter || <Footer></Footer>}
       </div>
-   
     </div>
   );
 };

@@ -9,6 +9,7 @@ import CarouselSlider from '../../Component/test';
 import AboutBuilding from '../../Component/AllUsers/AboutSection';
 import LocationSection from '../../Component/AllUsers/GoogleMap';
 import CouponsSection from '../../Component/AllUsers/Cupon';
+import CuponsClient from '../../Component/CuponsClient';
 
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
             <Category></Category>
             {/* <PopularSection></PopularSection> */}
             <Feature></Feature>
+            <CuponsClient></CuponsClient>
             <AboutBuilding></AboutBuilding>
             <Testimonials></Testimonials>
             <LocationSection></LocationSection>
