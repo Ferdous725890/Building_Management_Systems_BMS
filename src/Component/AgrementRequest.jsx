@@ -18,9 +18,11 @@ const AgrementRequest = () => {
     },
   });
 
-  const handelupdateRequest = async (id) => {
-    const res = await axiousepulich.patch(`/apartment/booking/${id}`);
+
+  const handelupdateRequest = async (request) => {
+    const res = await axiousepulich.patch(`/apartment/booking/${request._id}`);
     console.log(res.data);
+    updatedRoel()
     refetch();
   };
 
@@ -61,7 +63,7 @@ const AgrementRequest = () => {
           <tbody>
             {/* row 1 */}
             {allAgrementRequest.map((request, index) => (
-              <tr>
+              <tr key={index}>
                 <td>{index + 1}</td>
                 <td>{request.userName}</td>
                 <td>{request.email}</td>
@@ -100,7 +102,7 @@ const AgrementRequest = () => {
                 {/* Accept button */}
                 <td>
                   <div className=" rounded-lg px-1 py-1 text-center ">
-                    <button onClick={() => handelupdateRequest(request._id)}>
+                    <button onClick={() => handelupdateRequest(request)}>
                     <div class="relative group inline-block">
                     <IoIosCheckmarkCircle  className="text-2xl text-green-500"/>
 

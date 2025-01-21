@@ -10,18 +10,18 @@ const Feature = () => {
         {/* <SectionTitle heading={"Featured"}></SectionTitle> */}
       </div>
 
-      <div className="flex justify-center items-center mb-10 container mx-auto w-11/12 py-10">
+      <div className="md:flex justify-center items-center mb-10 container mx-auto w-11/12 py-10">
         <div className="">
           <img
-            className="w-[300px]  rounded-lg"
+            className="md:max-w-[300px] w-full rounded-2xl md:rounded-lg mb-7"
             src="https://www.housingman.com/news/wp-content/uploads/2018/02/luxury-homes-inside-pic-.png"
             alt=""
           />
         </div>
-        <div className="ml-10 border-t-2  border-b-2 py-5 rounded-lg px-8">
+        <div className="ml-10 border-t-2  border-b-2 py-5 rounded-lg md:px-8">
           <p className="uppercase text-xl mb-2">Where Can i get Some</p>
           <p className="mb-2">Aug 20, 2029</p>      
-          <p className="w-[500px] ">
+          <p className="max-w-[500px] w-full">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ea
             adipisci, nulla at iure non atque nemo hic, nisi in et incidunt id
             cumque qui rerum suscipit doloremque veniam placeat reiciendis ex

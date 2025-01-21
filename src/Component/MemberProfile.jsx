@@ -20,16 +20,16 @@ const MemberProfile = () => {
       return res.data;
     },
   });
-  if(isLoading){
-    <h2>loding...............</h2>
+  if (isLoading) {
+    <h2>loding...............</h2>;
   }
   return (
     <div>
       <div>
-        <div className="overflow-x-auto p-10">
+        <div className="overflow-x-auto p-10 text-white">
           <table className="table">
             {/* head */}
-            <thead>
+            <thead className="text-white bg-slate-500">
               <tr>
                 <th>Number</th>
                 <th>User Image</th>
@@ -44,12 +44,16 @@ const MemberProfile = () => {
 
             <tbody>
               {userdata.map((items, index) => (
-                <tr key={items._id}>
+                <tr  className="hover:bg-white/5 border-gray-400  " key={items._id}>
                   {/* <th>{items.photoURL}</th> */}
                   <th>{index + 1}</th>
                   <td>
                     <div>
-                        <img className="w-16 h-16 rounded-full object-cover" src={user?.photoURL} alt="" />
+                      <img
+                        className="w-16 h-16 rounded-full object-cover"
+                        src={user?.photoURL}
+                        alt=""
+                      />
                     </div>
                   </td>
                   <td>{user?.displayName}</td>

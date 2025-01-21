@@ -28,6 +28,7 @@ const Signin = () => {
       const userinfo = {
         name: data.name,
         email: data.email,
+        role:'user'
       };
       axiosPublic.post("/users", userinfo).then((res) => {
         // console.log(res.data, 'user data added')

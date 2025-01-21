@@ -18,12 +18,12 @@ const CuponsClient = () => {
     },
   });
   return (
-    <div className="text-white mt-10">
+    <div className="text-white mt-10 container mx-auto w-11/12">
       <h2 className="text-center  text-4xl mb-10">
         {" "}
         Total Cupons {cuponsdata.length}
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
       {cuponsdata.map((cupon) => (
         <CuponCard cupon={cupon} key={cupon._id}></CuponCard>
       ))}

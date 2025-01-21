@@ -6,6 +6,7 @@ import { Pagination, Autoplay } from "swiper/modules"; // Autoplay মডিউ�
 import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
+import Marquee from "react-fast-marquee";
 
 const Category = () => {
   const axiosPublic = useAxiosPublic();
@@ -31,42 +32,32 @@ const Category = () => {
 
         {isLoading && <p>Loading apartments...</p>}
         {isError && <p>Failed to load apartments. Please try again later.</p>}
-
-        {/* Render Swiper if userdata exists */}
-        {userdata.length > 0 && (
-          <Swiper
-            slidesPerView={4}
-            spaceBetween={30}
-            autoplay={{
-              delay: 1000, 
-              disableOnInteraction: false,
-            }}
-            centeredSlides={true}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Pagination, Autoplay]} 
-            className="mySwiper"
+        <div >
+          <Marquee
+          pauseOnClick={true}
+          speed={100}
           >
+     
             {userdata.map((item) => (
               <SwiperSlide key={item.id}>
-                <div className="relative">
+                <div className="relative bg-gray-200 rounded-lg overflow-hidden mr-5">
+                  {/* Image */}
                   <img
                     src={item.apartment_image}
                     alt={`Apartment ${item.apartment_no}`}
-                    className=" w-full h-full min-h-[400px] object-cover rounded-lg"
+                    className=" w-56 md:w-96 h-64 sm:h-72 md:h-80 lg:h-96 object-cover"
                   />
-                  <h2 className="text-4xl uppercase text-white absolute bottom-4 left-4 bg-black bg-opacity-50 p-2 rounded">
-                    {item.apartment_no}
-                  </h2>
-                  <h2 className="text-4xl uppercase text-white absolute bottom-4 left-32 bg-black bg-opacity-50 p-2 rounded">
-                   
-                  </h2>
+                  {/* Overlay Text */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent">
+                    <h2 className="absolute bottom-4 left-4 text-white text-lg sm:text-xl lg:text-2xl font-semibold bg-black bg-opacity-50 px-3 py-1 rounded">
+                      Apartment No: {item.apartment_no}
+                    </h2>
+                  </div>
                 </div>
               </SwiperSlide>
             ))}
-          </Swiper>
-        )}
+          </Marquee>
+        </div>
       </section>
     </div>
   );

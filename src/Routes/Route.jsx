@@ -31,6 +31,9 @@ import ManageMembers from "../Component/ManageMembers";
 import MakeAnnouncement from "../Component/MakeAnnouncement";
 import Cupons from "../Component/Cupons";
 import AllCupons from "../Component/AllCupons";
+import MakePayment from "../Component/MakePayment";
+import ResponsiveSidebar from "../Pages/Home/TESTIMONIALS/Layout/Dashbord";
+
 
 
   const router = createBrowserRouter([
@@ -77,7 +80,7 @@ import AllCupons from "../Component/AllCupons";
     {
       path:"dashbord",
       element:<PrivatedRouted>
-        <Dashbord></Dashbord>
+   <ResponsiveSidebar></ResponsiveSidebar>
       </PrivatedRouted>,
       children:[
         {
@@ -137,9 +140,14 @@ import AllCupons from "../Component/AllCupons";
         element:<AllCupons></AllCupons>
         },
         {
+          path:'Payment',
+          element:<Payment></Payment>
+          },
+        {
         path:'Announcement/admin',
         element:<MakeAnnouncement></MakeAnnouncement>
         },
+      
         
     ]
     }

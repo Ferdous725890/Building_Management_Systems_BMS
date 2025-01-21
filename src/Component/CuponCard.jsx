@@ -4,7 +4,7 @@ const CuponCard = ({ cupon }) => {
   const { cupons, cuponscode, discount, Discription, expiredate, status } = cupon;
 
   return (
-    <div className="border bg-white/10 shadow-md rounded-lg p-6 w-80 mb-5 ">
+    <div className="border bg-white/10 shadow-md rounded-lg p-6 w-full  ">
       {/* Coupon Title */}
       <h2 className="text-lg font-semibold text-gray-800">{cupons}</h2>
 

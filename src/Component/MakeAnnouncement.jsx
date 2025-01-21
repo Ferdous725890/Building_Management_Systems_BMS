@@ -29,20 +29,20 @@ const MakeAnnouncement = () => {
       </div>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-sm font-medium text-white mb-[4px] ">Title <span className="text-red-500">*</span></label>
+          <label className="block   text-sm font-medium text-white mb-[4px] ">Title <span className="text-red-500">*</span></label>
           <input
             type="text"
             name="title"
-            className="w-full border px-3 py-2 rounded-md"
+            className="w-full  px-3 py-2 rounded-md bg-slate-900 focus:outline focus:outline-blue-300"
             placeholder="Enter announcement title"
             required
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-white mb-1">Description <span className="text-red-500">*</span></label>
+          <label className="block text-sm font-medium text-white mb-2">Description <span className="text-red-500">*</span></label>
           <textarea
             name="description"
-            className="w-full min-h-[200px] border px-3 py-2 rounded-md"
+            className="w-full focus:outline focus:outline-blue-300 min-h-[200px]   px-3 py-2 rounded-md bg-slate-900"
             placeholder="Enter announcement description"
             rows="4"
             required
