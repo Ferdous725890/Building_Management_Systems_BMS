@@ -33,6 +33,9 @@ import Cupons from "../Component/Cupons";
 import AllCupons from "../Component/AllCupons";
 import MakePayment from "../Component/MakePayment";
 import ResponsiveSidebar from "../Pages/Home/TESTIMONIALS/Layout/Dashbord";
+import BuildingSection from "../Component/About";
+import Contact from "../Component/Contact";
+import UserPayment from "../Component/UserPayment";
 
 
 
@@ -67,13 +70,22 @@ import ResponsiveSidebar from "../Pages/Home/TESTIMONIALS/Layout/Dashbord";
           element:<Signin></Signin>
         },
         {
+          path: '/About',
+          element:<BuildingSection></BuildingSection>
+        },
+        {
+          path: '/contactme',
+          element:<Contact></Contact>
+        },
+        {
           path:'/secret',
           element:<PrivatedRouted>
              <Secret></Secret>
           </PrivatedRouted>
            
         
-        }
+        },
+     
       ]
     },
 
@@ -86,10 +98,6 @@ import ResponsiveSidebar from "../Pages/Home/TESTIMONIALS/Layout/Dashbord";
         {
           path:'cart',
           element:<Cart></Cart>
-        },
-        {
-          path:`payment`,
-          element: <Payment></Payment> 
         },
 
         //admin user onley
@@ -113,6 +121,11 @@ import ResponsiveSidebar from "../Pages/Home/TESTIMONIALS/Layout/Dashbord";
           path:'agrementRequest',
           element:<AgrementRequest></AgrementRequest>
         },
+        {
+          path:'payments',
+          element:<Payment></Payment>
+        },
+      
         {
           path:`/dashbord/updated/:id`,
           element:<AdminRouter> <Edited></Edited> </AdminRouter>,
@@ -139,15 +152,15 @@ import ResponsiveSidebar from "../Pages/Home/TESTIMONIALS/Layout/Dashbord";
         path:'coupons',
         element:<AllCupons></AllCupons>
         },
-        {
-          path:'Payment',
-          element:<Payment></Payment>
-          },
+    
         {
         path:'Announcement/admin',
         element:<MakeAnnouncement></MakeAnnouncement>
         },
-      
+        {
+          path:'/dashbord/paymentsuser',
+          element:<UserPayment></UserPayment>
+        },
         
     ]
     }

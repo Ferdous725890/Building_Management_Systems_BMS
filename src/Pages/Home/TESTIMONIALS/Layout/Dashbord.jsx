@@ -26,9 +26,12 @@ const Dashbord = () => {
     queryKey: [user?.email, "user"],
     queryFn: async () => {
       const res = await axiosPublic.get(`/alluserdata/${user.email}`);
+      // console.log(res.data);
       return res.data;
     },
   });
+  console.log(userdata);
+
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -37,7 +40,7 @@ const Dashbord = () => {
   };
 
   return (
-    <div className="flex bg-black">
+    <div className="flex bg-black min-h-[100vh] min-w-[100vh]">
       {/* Sidebar Toggle Button */}
       <button
         className="text-white p-3 bg-orange-500 fixed z-50 top-4 left-4 rounded-full md:hidden"
@@ -87,41 +90,26 @@ const Dashbord = () => {
               </li>
             </>
           ) : userdata.role === "member" ? (
+
             <>
               <li>
                 <NavLink to={"/dashbord/member"}>Member Profile</NavLink>
               </li>
+            
               <li>
-                <NavLink to={"/dashbord/carts"}>
-                  <FaShoppingCart /> My Cart
-                  <span className="text-blue-500"> ({cart.length})</span>
-                </NavLink>
+                <NavLink to={"/dashbord/payments"}>Payment</NavLink>
               </li>
+            
             </>
           ) : (
             <>
               <li>
                 <NavLink to={"/dashbord/myprofile"}>
-                  <FaHome /> My Profile
+                  <FaHome />user Profile
                 </NavLink>
               </li>
               <li>
                 <NavLink to={"/dashbord/announcement"}>Announcements</NavLink>
-              </li>
-              <li>
-                <NavLink to={"/dashbord/reservation"}>
-                  <FaCalendarDay /> Reservation
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to={"/dashbord/review"}>
-                  <FaAddressBook /> Review
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to={"/dashbord/booking"}>
-                  <FaList /> My Booking
-                </NavLink>
               </li>
             </>
           )}

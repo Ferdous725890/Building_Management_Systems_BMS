@@ -28,16 +28,17 @@ const Navbar = () => {
       </Link>
       <Link
         className="border ml-5 px-2 py-1 rounded-md text-white font-semibold "
-        to={"/order/salad"}
+        to={"/About"}
       >
-        Order
+     About Butilding
       </Link>
       <Link
         className="border ml-5 px-2 py-1 rounded-md text-white font-semibold "
-        to={"/menu"}
+        to={"/contactme"}
       >
-        Menu
+     Contact Me
       </Link>
+    
     </>
   );
   return (
