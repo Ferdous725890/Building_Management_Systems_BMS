@@ -3,6 +3,7 @@ import useAxiosSecure from '../../Hooks/UseManu/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import { FaDeleteLeft, FaUsers } from 'react-icons/fa6';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 const Alluser = () => {
     const axiosSecure = useAxiosSecure();
@@ -69,6 +70,12 @@ const Alluser = () => {
     }
 
     return (
+        <>
+         <Helmet>
+        <title>Dashbord || All User</title>
+      </Helmet>
+        
+
         <div className='p-10'>
             <div className='flex justify-between items-center my-10'>
                 <h2 className='text-2xl'>All users</h2>
@@ -113,7 +120,9 @@ const Alluser = () => {
                 </table>
             </div>
         </div>
+        </>
     );
+
 };
 
 export default Alluser;

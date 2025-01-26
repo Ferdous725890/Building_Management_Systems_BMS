@@ -54,13 +54,7 @@
      </NavLink>
    </li>
 
-   <li>
-    <NavLink to={"/dashbord/carts"}>
-      <FaShoppingCart></FaShoppingCart>
-      My Cart
-      <span className="text-blue-500">( {cart.length})</span>
-    </NavLink>
-  </li>
+ 
  
  
  </>

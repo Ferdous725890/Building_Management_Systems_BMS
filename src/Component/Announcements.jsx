@@ -2,6 +2,7 @@ import React from "react";
 import UseAuth from "../Hooks/UseManu/UseAuth";
 import useAxiosPublic from "../Hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
+import { Helmet } from "react-helmet";
 
 const Announcements = () => {
   const { user } = UseAuth();
@@ -19,6 +20,13 @@ const Announcements = () => {
     },
   });
   return (
+
+    <>
+    <Helmet>
+   <title>Dashbord || Announcement</title>
+ </Helmet>
+   
+
     <div className="p-10 text-white">
       <h2 className="text-2xl mb-5">
         Announcements ({announcementdata.length})
@@ -32,6 +40,9 @@ const Announcements = () => {
         </>
       ))}
     </div>
+   </>
+
+
   );
 };
 

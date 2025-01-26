@@ -12,6 +12,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import { Helmet } from "react-helmet";
 
 // Register Chart.js modules
 ChartJS.register(BarElement, ArcElement, CategoryScale, LinearScale, Tooltip, Legend);
@@ -121,6 +122,10 @@ const AdminProfile = () => {
   };
 
   return (
+    <>
+     <Helmet>
+        <title>Dashbord || Admin Profile</title>
+      </Helmet>
     <div className="p-5 text-white">
       <div className="flex justify-center items-center flex-col">
         <p className="text-xl border-b-4 pb-2 px-4 rounded-lg mb-5">
@@ -172,6 +177,8 @@ const AdminProfile = () => {
       </div>
 
     </div>
+    
+    </>
   );
 };
 

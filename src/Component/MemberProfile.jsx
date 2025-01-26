@@ -2,6 +2,7 @@ import React from "react";
 import useAxiosPublic from "../Hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 import UseAuth from "../Hooks/UseManu/UseAuth";
+import { Helmet } from "react-helmet";
 
 const MemberProfile = () => {
   const { user } = UseAuth();
@@ -25,6 +26,14 @@ const MemberProfile = () => {
   }
   return (
     <div>
+
+
+         <Helmet>
+        <title>Dashbord || My Profile</title>
+      </Helmet>
+        
+
+     
       <div>
         <div className="overflow-x-auto p-10 text-white">
           <table className="table">
@@ -50,7 +59,9 @@ const MemberProfile = () => {
                   <td>
                     <div>
                       <img
+
                         className="w-16 h-16 rounded-full object-cover"
+                        referrerPolicy="no-referance"
                         src={user?.photoURL}
                         alt=""
                       />

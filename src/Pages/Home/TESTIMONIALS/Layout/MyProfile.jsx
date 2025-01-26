@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../../../Hooks/useAxiosPublic";
 import UseAuth from "../../../../Hooks/UseManu/UseAuth";
 import { ImEmbed } from "react-icons/im";
+import { Helmet } from "react-helmet";
 
 const MyProfile = () => {
   const { user } = UseAuth();
@@ -22,6 +23,16 @@ const MyProfile = () => {
   });
   return (
     <div>
+
+
+         <Helmet>
+        <title>Dashbord || My Profile</title>
+      </Helmet>
+        
+
+       
+
+
       <div className="overflow-x-auto p-10 text-white">
         <table className="table">
           {/* head */}

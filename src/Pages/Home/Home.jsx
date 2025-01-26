@@ -10,11 +10,17 @@ import AboutBuilding from '../../Component/AllUsers/AboutSection';
 import LocationSection from '../../Component/AllUsers/GoogleMap';
 import CouponsSection from '../../Component/AllUsers/Cupon';
 import CuponsClient from '../../Component/CuponsClient';
+import { Helmet } from 'react-helmet';
 
 
 const Home = () => {
     return (
+
         <div>
+
+        <Helmet>
+        <title>Building Management</title>
+      </Helmet>
        
             {/* <Banner></Banner> */}
             <CarouselSlider></CarouselSlider>

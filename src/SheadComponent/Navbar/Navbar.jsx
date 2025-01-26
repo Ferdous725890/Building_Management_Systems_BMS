@@ -26,19 +26,13 @@ const Navbar = () => {
       >
         Apartment
       </Link>
-      <Link
-        className="border ml-5 px-2 py-1 rounded-md text-white font-semibold "
-        to={"/About"}
-      >
-     About Butilding
-      </Link>
+
       <Link
         className="border ml-5 px-2 py-1 rounded-md text-white font-semibold "
         to={"/contactme"}
       >
-     Contact Me
+        Contact Me
       </Link>
-    
     </>
   );
   return (
@@ -70,15 +64,16 @@ const Navbar = () => {
                 </div>
                 <ul
                   tabIndex={0}
-                  className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+                  className="menu menu-sm bg-gray-700 dropdown-content rounded-box z-[1] mt-3 w-52 
+                   shadow"
                 >
                   {navOptions}
                 </ul>
               </div>
-              <a className="text-2xl text-white ">Ferdous</a>
+              <Link to={'/'} className="text-2xl text-white ">EliteBooking</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-              <ul className="menu menu-horizontal px-1">{navOptions}</ul>
+              <ul className="menu menu-horizontal px-1 ">{navOptions}</ul>
             </div>
             <div className="navbar-end">
               {user?.email ? (
@@ -106,17 +101,17 @@ const Navbar = () => {
                     </div>
                     <ul
                       tabIndex={0}
-                      className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+                      className="menu menu-sm  bg-white/30 text-black backdrop-blur-3xl  dropdown-content   rounded-box z-[1] mt-3 w-52 p-2 shadow "
                     >
                       <li>
-                        <a className="justify-between">Profile</a>
+                        <a className="justify-between hover:text-green-500 text-[18px]">Profile</a>
                       </li>
                       <li>
-                        <a>{user?.displayName}</a>
+                        <a className="hover:text-green-500 text-[18px]" >{user?.displayName}</a>
                       </li>
-                      <Link to={"/dashbord/cart"}>Dashbord</Link>
+                      <Link className="ml-2 hover:text-green-500 text-[18px]" to={"/dashbord"}>Dashbord</Link>
 
-                      <button onClick={handelLogout} className="">
+                      <button  onClick={handelLogout} className="hover:text-green-500 text-[18px]">
                         Logout
                       </button>
 

@@ -5,6 +5,7 @@ import UseAuth from "../Hooks/UseManu/UseAuth";
 
 import { MdDeleteForever, MdOutlinePersonRemoveAlt1 } from "react-icons/md";
 import { IoIosCheckmarkCircle } from "react-icons/io";
+import { Helmet } from "react-helmet";
 
 const AgrementRequest = () => {
   const axiousepulich = useAxiosPublic();
@@ -13,16 +14,15 @@ const AgrementRequest = () => {
     queryKey: ["apartments"],
     queryFn: async () => {
       const res = await axiousepulich.get(`/apartment/booking`);
-
+      console.log(res.data);
       return res.data;
     },
   });
 
-
   const handelupdateRequest = async (request) => {
     const res = await axiousepulich.patch(`/apartment/booking/${request._id}`);
     console.log(res.data);
-    updatedRoel()
+
     refetch();
   };
 
@@ -33,7 +33,20 @@ const AgrementRequest = () => {
     refetch();
   };
 
+  const handelmember = async (email) => {
+    const res = await axiousepulich.patch(`/user/admin/${email}`);
+    console.log(email);
+    console.log(res.data);
+  };
+
   return (
+
+    <>
+    <Helmet>
+   <title>Dashbord || Agrement Request</title>
+ </Helmet>
+   
+
     <div className="p-10 text-white">
       <div className="flex justify-center items-center ">
         <p className="text-xl border-b-4 pb-2 px-4 rounded-lg mb-5 text-white">
@@ -57,7 +70,7 @@ const AgrementRequest = () => {
               <th>Status</th>
               <th>Action</th>
               <th>Accept Request</th>
-            
+              <th>Make Member</th>
             </tr>
           </thead>
           <tbody>
@@ -71,6 +84,7 @@ const AgrementRequest = () => {
                 <td>{request.floor_no}</td>
                 <td>{request.apartment_no}</td>
                 <td>{request.rent}</td>
+
                 <td>
                   <div
                     className={
@@ -93,7 +107,7 @@ const AgrementRequest = () => {
                         <MdOutlinePersonRemoveAlt1 className="text-2xl text-red-500 " />
 
                         <span class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black text-white text-sm rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                        Reject
+                          Reject
                         </span>
                       </div>
                     </button>
@@ -103,18 +117,21 @@ const AgrementRequest = () => {
                 <td>
                   <div className=" rounded-lg px-1 py-1 text-center ">
                     <button onClick={() => handelupdateRequest(request)}>
-                    <div class="relative group inline-block">
-                    <IoIosCheckmarkCircle  className="text-2xl text-green-500"/>
+                      <div class="relative group inline-block">
+                        <IoIosCheckmarkCircle className="text-2xl text-green-500" />
 
                         <span class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black text-white text-sm rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                        Accept 
+                          Accept
                         </span>
                       </div>
                     </button>
-
-
-                    
                   </div>
+                </td>
+
+                <td>
+                  <button onClick={() => handelmember(request.email)}>
+                    Member
+                  </button>
                 </td>
               </tr>
             ))}
@@ -122,6 +139,10 @@ const AgrementRequest = () => {
         </table>
       </div>
     </div>
+   </>
+
+
+
   );
 };
 
