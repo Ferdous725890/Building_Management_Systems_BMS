@@ -49,7 +49,7 @@ navigate('/')
   return (
     <>
       <Helmet>
-        <title>BMS || Login</title>
+        <title>BMS | Login</title>
       </Helmet>
       <div className="hero  min-h-screen ">
         <div className="hero-content flex-col">
