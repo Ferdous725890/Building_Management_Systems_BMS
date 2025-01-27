@@ -41,7 +41,7 @@ const MemberProfile = () => {
             <thead className="text-white bg-slate-500">
               <tr>
                 <th>Numbers</th>
-                <th>User Image</th>
+                <th>User_Image</th>
                 <th>User Name </th>
                 <th>Email </th>
                 <th>Apartment_No</th>
