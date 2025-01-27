@@ -40,7 +40,7 @@ const MemberProfile = () => {
             {/* head */}
             <thead className="text-white bg-slate-500">
               <tr>
-                <th>Number</th>
+                <th>Numbers</th>
                 <th>User Image</th>
                 <th>User Name </th>
                 <th>Email </th>
