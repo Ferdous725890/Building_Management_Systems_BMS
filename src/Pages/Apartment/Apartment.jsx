@@ -31,7 +31,7 @@ const Apartment = () => {
   });
 
   if (isLoading) {
-    return <div className="text-center mt-20">Loading...</div>;
+    return <div className="text-center mt-20">Loading...........</div>;
   }
 
   if (isError) {
