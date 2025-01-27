@@ -31,7 +31,7 @@ const Payment = () => {
     <div className="p-10 text-white">
       payment
       <Link to={"/dashbord/paymentsuser"}>
-        <button className="btn btn-primary">pay</button>
+        <button className="btn btn-primary">Payment</button>
       </Link>
 
 {
