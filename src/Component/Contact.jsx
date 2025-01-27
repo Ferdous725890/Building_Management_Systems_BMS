@@ -86,7 +86,7 @@ const Contact = () => {
               <p className="text-white mb-6">
                 We are always eager to hear from you and assist with any
                 inquiries or concerns you may have. Please feel free to reach
-                out to us through any of the following means:
+                out to us through any of the following mean:
               </p>
               <ul className="space-y-4">
                 <li className="flex items-center">
