@@ -39,7 +39,7 @@ const MyProfile = () => {
           <thead className="text-white bg-gray-500">
             <tr>
               <th>
-              Number
+              Numbers
               </th>
               <th>User Name </th>
               <th>Email </th>
