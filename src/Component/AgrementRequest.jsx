@@ -43,7 +43,7 @@ const AgrementRequest = () => {
 
     <>
     <Helmet>
-   <title>Dashbord || Agrement Request</title>
+   <title>Dashbord || Agrement Requests</title>
  </Helmet>
    
 
