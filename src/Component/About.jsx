@@ -126,7 +126,7 @@ const BuildingSection = () => {
         <ul className="list-disc pl-5 text-white">
           <li>Rooftop garden with a stunning city view.</li>
           <li>Lounge area for social gatherings and events.</li>
-          <li>Children's play area and daycare services.</li>
+          <li>Children's play area and daycare services</li>
         </ul>
       </div>
     </section>
