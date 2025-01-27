@@ -26,6 +26,12 @@ const Navbar = () => {
       >
         Apartment
       </Link>
+      <Link
+        className="border ml-5 px-2 py-1 rounded-md text-white font-semibold "
+        to={"/about"}
+      >
+        About Our Building
+      </Link>
 
       <Link
         className="border ml-5 px-2 py-1 rounded-md text-white font-semibold "

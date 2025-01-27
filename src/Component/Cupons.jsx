@@ -4,6 +4,9 @@ import useAxiosPublic from "../Hooks/useAxiosPublic";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { format } from "date-fns";
+
+
+
 const Cupons = ({setModalOpen}) => {
   const [startDate, setStartDate] = useState(new Date());
   console.log(startDate);
@@ -33,8 +36,12 @@ const Cupons = ({setModalOpen}) => {
     console.log(res.data);
   };
 
+
+
   return (
     <div className=" text-white h-[400px]">
+
+
       <form onSubmit={handleSubmit(onSubmit)} className="card-body">
         {/* cupons */}
         <div className="form-control ">

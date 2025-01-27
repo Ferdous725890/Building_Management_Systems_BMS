@@ -19,7 +19,7 @@ const Home = () => {
         <div>
 
         <Helmet>
-        <title>Building Management</title>
+        <title>Building Management (BMS)</title>
       </Helmet>
        
             {/* <Banner></Banner> */}

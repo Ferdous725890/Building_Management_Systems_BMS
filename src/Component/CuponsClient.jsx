@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import useAxiosPublic from "../Hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 import CuponCard from "./CuponCard";
 
+
 const CuponsClient = () => {
+
+
+
   const axiosPublic = useAxiosPublic();
   const {
     data: cuponsdata = [],
@@ -17,8 +21,25 @@ const CuponsClient = () => {
       return res.data;
     },
   });
+
+
+
+ 
   return (
     <div className="text-white mt-10 container mx-auto w-11/12">
+    
+    
+
+
+   
+
+
+
+
+
+
+
+
       <h2 className="text-center  text-4xl mb-10">
         {" "}
         Total Cupons {cuponsdata.length}

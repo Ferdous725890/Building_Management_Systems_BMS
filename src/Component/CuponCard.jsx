@@ -1,7 +1,10 @@
 import React from 'react';
-
+import { useState } from 'react';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 const CuponCard = ({ cupon }) => {
   const { cupons, cuponscode, discount, Discription, expiredate, status } = cupon;
+  const [copid, setcopid] = useState()
+
 
   return (
     <div className="border bg-white/10 shadow-md rounded-lg p-6 w-full  ">
@@ -13,6 +16,22 @@ const CuponCard = ({ cupon }) => {
         <span className="font-medium text-gray-600">Code: </span>
         <span className="bg-gray-200 text-gray-800 px-2 py-1 rounded">{cuponscode}</span>
       </p>
+
+ <div className="flex flex-col items-center justify-center  text-gray-800">
+    
+
+      <CopyToClipboard text={cuponscode} onCopy={() => setcopid(true)}>
+        <div className=" bg-red-50 w-full text-center rounded-md mt-2 cursor-pointer hover:bg-blue-100">
+          Copy Cupons Code 
+        </div>
+      </CopyToClipboard>
+
+  
+   
+    </div>
+
+
+
 
       {/* Discount */}
       <p className="mt-2 text-sm text-green-600 font-bold">

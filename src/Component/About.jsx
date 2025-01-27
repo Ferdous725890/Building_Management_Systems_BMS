@@ -2,10 +2,10 @@ import React from "react";
 
 const BuildingSection = () => {
   const buildingDetails = {
-    name: "Sunrise Tower",
+    name: "EliteBooking",
     location: "123 Main Street, Cityville",
     description:
-      "Sunrise Tower is a state-of-the-art building featuring modern architecture and advanced building management systems. It is designed to provide comfort, safety, and sustainability for residents and businesses.",
+      "EliteBooking is a state-of-the-art building featuring modern architecture and advanced building management systems. It is designed to provide comfort, safety",
     amenities: [
       "24/7 Security",
       "Fully Equipped Gym",
@@ -22,15 +22,15 @@ const BuildingSection = () => {
   };
 
   return (
-    <section className="building-section p-6 rounded-lg shadow-lg pt-20">
-      <h2 className="text-3xl font-bold text-gray-800 mb-4">
+    <section className="building-section p-6 rounded-lg  pt-20">
+      <h2 className="text-3xl font-bold text-white mb-4 text-center pt-5">
         About {buildingDetails.name}
       </h2>
 
-      <section className="building-section p-6 rounded-lg shadow-lg">
-      <h2 className="text-3xl font-bold text-gray-800 mb-4">Sunrise Tower</h2>
-      <p className="text-gray-700 mb-6">
-        Sunrise Tower is a modern architectural marvel located in the heart of
+      <section className="building-section p-6 rounded-lg ">
+      <h2 className="text-3xl font-bold text-white mb-4">EliteBooking</h2>
+      <p className="text-white mb-6 w-full max-w-[900px]">
+        EliteBooking is a modern architectural marvel located in the heart of
         Cityville. Designed with cutting-edge technology and sustainability in
         mind, it provides a perfect blend of luxury, convenience, and
         eco-friendly living. The building caters to both residential and
@@ -39,11 +39,11 @@ const BuildingSection = () => {
       </p>
 
       <div className="mb-6">
-        <h3 className="text-2xl font-semibold text-gray-800 mb-2">Key Highlights</h3>
-        <ul className="list-disc pl-5 text-gray-700">
+        <h3 className="text-2xl font-semibold text-white mb-2">Key Highlights</h3>
+        <ul className="list-disc pl-5 text-white">
           <li>
             <strong>Prime Location:</strong> Situated in the bustling downtown
-            area, Sunrise Tower offers easy access to shopping centers,
+            area, EliteBooking offers easy access to shopping centers,
             restaurants, schools, and public transportation hubs.
           </li>
           <li>
@@ -63,15 +63,15 @@ const BuildingSection = () => {
           </li>
           <li>
             <strong>Luxury Lifestyle Amenities:</strong> From a spa and swimming
-            pool to coworking spaces and a conference room, Sunrise Tower is
+            pool to coworking spaces and a conference room, EliteBooking is
             designed to meet diverse needs.
           </li>
         </ul>
       </div>
 
       <div className="mb-6">
-        <h3 className="text-2xl font-semibold text-gray-800 mb-2">Building Specifications</h3>
-        <ul className="list-disc pl-5 text-gray-700">
+        <h3 className="text-2xl font-semibold text-white mb-2">Building Specifications</h3>
+        <ul className="list-disc pl-5 text-white">
           <li>
             <strong>Total Floors:</strong> 20
           </li>
@@ -91,8 +91,8 @@ const BuildingSection = () => {
       </div>
 
       <div className="mb-6">
-        <h3 className="text-2xl font-semibold text-gray-800 mb-2">Additional Services</h3>
-        <ul className="list-disc pl-5 text-gray-700">
+        <h3 className="text-2xl font-semibold text-white mb-2">Additional Services</h3>
+        <ul className="list-disc pl-5 text-white">
           <li>
             <strong>Concierge Desk:</strong> Dedicated staff available for
             booking services and handling queries.
@@ -113,8 +113,8 @@ const BuildingSection = () => {
       </div>
 
       <div className="mb-6">
-        <h3 className="text-2xl font-semibold text-gray-800 mb-2">Location Advantages</h3>
-        <ul className="list-disc pl-5 text-gray-700">
+        <h3 className="text-2xl font-semibold text-white mb-2">Location Advantages</h3>
+        <ul className="list-disc pl-5 text-white">
           <li>Walking distance to Cityville Central Mall.</li>
           <li>Proximity to Cityville International Airport (10 miles).</li>
           <li>Easy connectivity to highways and public transport.</li>
@@ -122,27 +122,35 @@ const BuildingSection = () => {
       </div>
 
       <div>
-        <h3 className="text-2xl font-semibold text-gray-800 mb-2">Community Spaces</h3>
-        <ul className="list-disc pl-5 text-gray-700">
+        <h3 className="text-2xl font-semibold text-white mb-2">Community Spaces</h3>
+        <ul className="list-disc pl-5 text-white">
           <li>Rooftop garden with a stunning city view.</li>
           <li>Lounge area for social gatherings and events.</li>
           <li>Children's play area and daycare services.</li>
         </ul>
       </div>
     </section>
-      <p className="text-gray-700 mb-4">{buildingDetails.description}</p>
+      <p className="text-white mb-4">{buildingDetails.description}</p>
 
       <div className="location-section mb-6">
-        <h3 className="text-2xl font-semibold text-gray-800 mb-2">Location</h3>
-        <p className="text-gray-700">{buildingDetails.location}</p>
-        <div className="map-placeholder mt-4 bg-gray-300 w-full h-60 flex items-center justify-center text-gray-600">
-          Map Placeholder (Embed Map API Here)
-        </div>
+        <h3 className="text-2xl font-semibold text-white mb-2">Location</h3>
+        <p className="text-white">{buildingDetails.location}</p>
+        <div className="rounded-lg overflow-hidden shadow-md">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509366!2d144.95373561531683!3d-37.81720997975144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d4edab0b8968!2sFederation%20Square!5e0!3m2!1sen!2sus!4v1614768258947!5m2!1sen!2sus"
+              width="100%"
+              height="300"
+              
+              allowFullScreen=""
+              loading="lazy"
+              title="Google Map"
+            ></iframe>
+          </div>
       </div>
 
       <div className="amenities-section mb-6">
-        <h3 className="text-2xl font-semibold text-gray-800 mb-2">Amenities</h3>
-        <ul className="list-disc pl-5 text-gray-700">
+        <h3 className="text-2xl font-semibold text-white mb-2">Amenities</h3>
+        <ul className="list-disc pl-5 text-white">
           {buildingDetails.amenities.map((amenity, index) => (
             <li key={index}>{amenity}</li>
           ))}
@@ -150,10 +158,10 @@ const BuildingSection = () => {
       </div>
 
       <div className="features-section">
-        <h3 className="text-2xl font-semibold text-gray-800 mb-2">
+        <h3 className="text-2xl font-semibold text-white mb-2">
           Building Features
         </h3>
-        <ul className="text-gray-700">
+        <ul className="text-white">
           <li>
             <strong>Total Floors:</strong> {buildingDetails.features.totalFloors}
           </li>
