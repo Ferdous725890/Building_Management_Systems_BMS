@@ -15,7 +15,7 @@ const Contact = () => {
               <h2 className="text-2xl font-bold mb-4">Get In Touch</h2>
               <p className="mb-6 text-white">
                 Please use the feedback form to get in touch with us if you have
-                any inquiries or requests. Within a few hours, the administrator
+                any inquiries or request. Within a few hours, the administrator
                 will respond to your inquiry.
               </p>
               <form
