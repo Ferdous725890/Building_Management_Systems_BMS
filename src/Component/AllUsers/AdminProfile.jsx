@@ -14,14 +14,14 @@ import {
 } from "chart.js";
 import { Helmet } from "react-helmet";
 
-// Register Chart.js modules
+
 ChartJS.register(BarElement, ArcElement, CategoryScale, LinearScale, Tooltip, Legend);
 
 const AdminProfile = () => {
   const { user } = UseAuth();
   const axiosPublic = useAxiosPublic();
 
-  // Apartments data
+
   const { data: apartment = [] } = useQuery({
     queryKey: ["totalapartment"],
     queryFn: async () => {
@@ -30,7 +30,6 @@ const AdminProfile = () => {
     },
   });
 
-  // Users data
   const { data: users = [] } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
@@ -39,7 +38,6 @@ const AdminProfile = () => {
     },
   });
 
-  // Members data
   const { data: members = [] } = useQuery({
     queryKey: ["members"],
     queryFn: async () => {
@@ -48,7 +46,7 @@ const AdminProfile = () => {
     },
   });
 
-  // Bookings data
+
   const { data: booking = [] } = useQuery({
     queryKey: ["booking"],
     queryFn: async () => {
@@ -57,10 +55,10 @@ const AdminProfile = () => {
     },
   });
 
-  // Total Rent Calculation
+
   const totalRent = booking.reduce((sum, book) => sum + book.rent, 0);
 
-  // Bar Chart Data for Counts
+
   const barChartDataCounts = {
     labels: ["Apartments", "Users", "Members", "Bookings"],
     datasets: [
@@ -88,7 +86,7 @@ const AdminProfile = () => {
     ],
   };
 
-  // Pie Chart Data
+
   const pieChartData = {
     labels: ["Apartments", "Users", "Members", "Bookings"],
     datasets: [
@@ -100,7 +98,7 @@ const AdminProfile = () => {
     ],
   };
 
-  // Chart Options
+
   const chartOptions = {
     responsive: true,
     plugins: {

@@ -8,6 +8,7 @@ import { AuthContext } from "../../Provider/Authprovider";
 
 const axiossSecure = axios.create({
     baseURL:"https://building-management-alpha.vercel.app/"
+    // baseURL:"http://localhost:5000/"
 })
 const useAxiosSecure = () => {
     const navigated = useNavigate()
@@ -42,3 +43,6 @@ navigated('/login')
 };
 
 export default useAxiosSecure;
+
+
+

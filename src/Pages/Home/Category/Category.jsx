@@ -7,6 +7,7 @@ import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 import Marquee from "react-fast-marquee";
+import { Link } from "react-router-dom";
 
 const Category = () => {
   const axiosPublic = useAxiosPublic();
@@ -40,7 +41,8 @@ const Category = () => {
      
             {userdata.map((item) => (
               <SwiperSlide key={item.id}>
-                <div className="relative bg-gray-200 rounded-lg overflow-hidden mr-5">
+              <Link to={'/apartment'}>
+              <div className="relative bg-gray-200 rounded-lg overflow-hidden mr-5">
                   {/* Image */}
                   <img
                     src={item.apartment_image}
@@ -54,6 +56,7 @@ const Category = () => {
                     </h2>
                   </div>
                 </div>
+              </Link>
               </SwiperSlide>
             ))}
           </Marquee>

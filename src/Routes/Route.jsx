@@ -37,6 +37,9 @@ import BuildingSection from "../Component/About";
 import Contact from "../Component/Contact";
 import UserPayment from "../Component/UserPayment";
 import AboutBuilding from "../Component/AllUsers/AboutSection";
+import PaymentHistory from "../Pages/Dashbord/Payment/PaymentHistory";
+import MyprofileAll from "../Component/MyprofileAll";
+import ErrorPage from "../Component/Error";
 
 const router = createBrowserRouter([
   {
@@ -80,6 +83,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <AboutBuilding></AboutBuilding>,
+      },
+      {
+        path: "*",
+        element: <ErrorPage></ErrorPage>
       },
 
       {
@@ -139,6 +146,10 @@ const router = createBrowserRouter([
         path: "payments",
         element: <Payment></Payment>,
       },
+      {
+        path: "paymenthistory",
+        element: <PaymentHistory></PaymentHistory>
+      },
 
       {
         path: `/dashbord/updated/:id`,
@@ -182,6 +193,10 @@ const router = createBrowserRouter([
       {
         path: "/dashbord/paymentsuser",
         element: <UserPayment></UserPayment>,
+      },
+      {
+        path: "myprofileall",
+        element: <MyprofileAll></MyprofileAll>
       },
     ],
   },

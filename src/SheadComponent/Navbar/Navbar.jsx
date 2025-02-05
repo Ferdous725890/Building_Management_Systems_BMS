@@ -101,7 +101,11 @@ const Navbar = () => {
                             />
                           </>
                         ) : (
-                          "log in or reg"
+                          <img
+                          referrerPolicy="no-referrer"
+                          alt="Tailwind CSS Navbar component"
+                          src='https://i.ibb.co.com/cQ3hgwT/Screenshot-118.png'
+                        />
                         )}
                       </div>
                     </div>

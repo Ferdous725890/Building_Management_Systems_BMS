@@ -124,7 +124,7 @@ const Apartment = () => {
                 alt={`Apartment ${apartment.apartment_no}`}
                 className="w-full h-48 object-cover rounded"
               />
-              <div className="mt-4">
+              <div className="mt-4 pl-2 pb-2">
                 <h3 className="text-xl font-semibold">
                   Block: {apartment.block_name}
                 </h3>
@@ -133,9 +133,7 @@ const Apartment = () => {
                 <p className="text-green-600 font-bold">
                   Rent: ${apartment.rent}
                 </p>
-                <p className="text-green-600 font-bold">
-                  Rent: ${apartment.rent}
-                </p>
+              
                 <button
                   onClick={() => handleAgreement(apartment)}
                   className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"

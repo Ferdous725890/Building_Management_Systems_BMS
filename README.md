@@ -68,5 +68,11 @@ A web-based application designed to streamline apartment management processes, i
 
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/yourusername/building-management-system.git
+   git clone https://github.com/Programming-Hero-Web-Course4/b10a12-client-side-Ferdous725890
    cd building-management-system
+
+
+
+## Live Site Link: https://fir-first-conceptual-83e2e.web.app
+## Admin Email : ferdous725890b@gmail.com
+## Admin Password : Bbc!1234XyAbc!1234Xy
