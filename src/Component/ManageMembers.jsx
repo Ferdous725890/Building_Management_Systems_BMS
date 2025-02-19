@@ -32,7 +32,7 @@ const ManageMembers = () => {
       <div className="flex justify-center items-center ">
         <p className="text-xl border-b-4 pb-2 px-4 rounded-lg mb-5">
           {" "}
-          All Members {membersdata.length}
+          All-Members {membersdata.length}
         </p>
       </div>
       <div className="overflow-x-auto ">
