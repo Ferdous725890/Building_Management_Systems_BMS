@@ -13,7 +13,7 @@ const CuponCard = ({ cupon }) => {
 
       {/* Coupon Code */}
       <p className="mt-2 text-sm">
-        <span className="font-medium text-gray-600">Code: </span>
+        <span className="font-medium text-gray-600">Code-: </span>
         <span className="bg-gray-200 text-gray-800 px-2 py-1 rounded">{cuponscode}</span>
       </p>
 
