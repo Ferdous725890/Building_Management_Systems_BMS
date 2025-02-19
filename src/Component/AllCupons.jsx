@@ -96,7 +96,7 @@ const AllCupons = () => {
               <th>Expire Date</th>
               <th>Status</th>
               <th>Change Status</th>
-              <th>Action</th>
+              <th>Actions</th>
             </tr>
           </thead>
 
