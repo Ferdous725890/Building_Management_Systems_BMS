@@ -57,7 +57,7 @@ const MemberProfile = () => {
           {/* Table Header */}
           <thead className="text-white bg-slate-500">
             <tr>
-              <th>Numbers</th>
+              <th>Number</th>
               <th>User_Image</th>
               <th>User Name</th>
               <th>Email</th>
