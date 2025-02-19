@@ -29,7 +29,7 @@ const Announcements = () => {
 
     <div className="p-10 text-white">
       <h2 className="text-2xl mb-5">
-        Announcements ({announcementdata.length})
+        Announcement-s ({announcementdata.length})
       </h2>
       {announcementdata.map((data) => (
         <>
