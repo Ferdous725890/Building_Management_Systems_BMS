@@ -133,7 +133,7 @@ const AgreementRequest = () => {
                 <th>Status</th>
                 <th>Action</th>
                 <th>Accept Request</th>
-                <th>Make Member</th>
+                <th>Make-Member</th>
               </tr>
             </thead>
             <tbody>
