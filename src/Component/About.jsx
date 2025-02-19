@@ -30,7 +30,7 @@ const BuildingSection = () => {
       <section className="building-section p-6 rounded-lg ">
       <h2 className="text-3xl font-bold text-white mb-4">EliteBooking </h2>
       <p className="text-white mb-6 w-full max-w-[900px]">
-        EliteBooking is a modern architectural marvel located in the heart of
+        EliteBooking is a modern architectural marvel located i-n the heart of
         Cityville. Designed with cutting-edge technology and sustainability in
         mind, it provides a perfect blend of luxury, convenience, and
         eco-friendlys living. The building caters to both residential and
