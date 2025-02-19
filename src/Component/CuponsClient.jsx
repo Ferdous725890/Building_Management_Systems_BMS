@@ -47,7 +47,7 @@ const CuponsClient = () => {
 
       <h2 className="text-center  text-4xl mb-10">
         {" "}
-        Total Cupons {cuponsdata.length}
+        Total-Cupons {cuponsdata.length}
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
       {cuponsdata.map((cupon) => (
